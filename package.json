@@ -1,0 +1,32 @@
+{
+  "name": "PG6301-Exam",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently npm:dev:client npm:dev:server",
+    "dev:client": "cd client && npm run dev",
+    "dev:server":  "cd server && npm run dev",
+    "build": "npm run build:server && npm run build:client",
+    "build:server": "cd server && npm run build",
+    "build:client": "cd client && npm run build",
+    "start": "cd server && npm run start"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Langeland1996/PG6301-Exam.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Langeland1996/PG6301-Exam/issues"
+  },
+  "homepage": "https://github.com/Langeland1996/PG6301-Exam#readme",
+  "devDependencies": {
+    "concurrently": "^7.5.0",
+    "prettier": "^2.7.1"
+  }
+}
