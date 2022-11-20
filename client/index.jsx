@@ -2,22 +2,6 @@ import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 
-function FrontPage() {
-  return (
-    <div>
-      <h1>Movies</h1>
-      <ul>
-        <li>
-          <Link to={"/movies"}>List movies</Link>
-        </li>
-        <li>
-          <Link to={"/movies/new"}>Add new movie</Link>
-        </li>
-      </ul>
-    </div>
-  );
-}
-
 function useLoading(loadingFunction) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState();
@@ -42,22 +26,38 @@ function useLoading(loadingFunction) {
 }
 
 async function fetchJSON(url) {
-    const res = await fetch(url);
-    if (!res.ok) {
-        throw new Error(`Failed to load ${res.status}: ${res.statusText}`)
-    }
-    return await res.json();
+  const res = await fetch(url);
+  if (!res.ok) {
+    throw new Error(`Failed to load ${res.status}: ${res.statusText}`);
+  }
+  return await res.json();
+}
+
+function FrontPage() {
+  return (
+    <div>
+      <h1>Movies</h1>
+      <ul>
+        <li>
+          <Link to={"/movies"}>List movies</Link>
+        </li>
+        <li>
+          <Link to={"/movies/new"}>Add new movie</Link>
+        </li>
+      </ul>
+    </div>
+  );
 }
 
 function ListMovies() {
-  const { loading, error, data } = useLoading(
-      async () => fetchJSON("/api/movies")
+  const { loading, error, data } = useLoading(async () =>
+    fetchJSON("/api/movies")
   );
 
-
   if (loading) {
-    <div>Loading...</div>;
+    return <div>Loading...</div>;
   }
+
   if (error) {
     return (
       <div>
@@ -70,9 +70,7 @@ function ListMovies() {
   return (
     <div>
       <h1>Movies in the database</h1>
-        <ul>
-            {data.map((e) => <li key={e.title}>Title: {e.title} </li>)}
-        </ul>
+      <ul>{data.map((e) => <li key={e.title}>Title: {e.title}</li>)}</ul>
     </div>
   );
 }
