@@ -1,6 +1,6 @@
 import express from "express";
 import * as path from "path";
-import { MoviesApi } from "./moviesApi.js";
+import { MenuApi } from "./menuApi.js";
 import { MongoClient } from "mongodb";
 import dotenv from "dotenv";
 
@@ -14,7 +14,7 @@ mongoClient.connect().then(async () => {
   console.log("Connected to mongodb");
   const databases = await mongoClient.db().admin().listDatabases();
   // Calls upon function in moviesApi.js
-  app.use("/api/movies", MoviesApi(mongoClient.db("pg6301")));
+  app.use("/api/menu", MenuApi(mongoClient.db("pg6301")));
 });
 
 
