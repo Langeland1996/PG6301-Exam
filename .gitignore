@@ -4,3 +4,4 @@ dist
 .idea
 server/.env
 *jsx.snap
+/client/coverage/
