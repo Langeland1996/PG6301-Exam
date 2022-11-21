@@ -30,14 +30,14 @@ export function ListMenu({ listMenu }) {
       </button>
       <ul>
         {data.map((e) => (
-            <>
-            <li key={e.Dish}>Dish: {e.Dish}</li>
-            <li key={e.Dish}>Ingredients: {e.Ingredients}</li>
-            <li key={e.Dish}>Allergies: {e.Allergies}</li>
-            <li key={e.Dish}>Vegan: {e.Vegan}</li>
-            <li key={e.Dish}>Vegetarian: {e.Vegetarian}</li>
+            <ul key={e.Dish}>
+            <li>Dish: {e.Dish}</li>
+            <li>Ingredients: {e.Ingredients}</li>
+            <li>Allergies: {e.Allergies}</li>
+            <li>Vegan: {e.Vegan}</li>
+            <li>Vegetarian: {e.Vegetarian}</li>
             <br></br>
-            </>
+            </ul>
         ))}
       </ul>
       <Link to={"/frontpage"}>Go back to homepage</Link>

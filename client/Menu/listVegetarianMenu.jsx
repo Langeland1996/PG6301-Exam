@@ -30,14 +30,14 @@ export function ListVegetarianMenu({listMenuOnlyVegetarian}) {
             </button>
             <ul>
                 {data.map((e) => (
-                    <>
-                        <li key={e.Dish}>Dish: {e.Dish}</li>
+                    <ul key={e.Dish}>
+                        <li>Dish: {e.Dish}</li>
                         <li>Ingredients: {e.Ingredients}</li>
                         <li>Allergies: {e.Allergies}</li>
                         <li>Vegan: {e.Vegan}</li>
                         <li>Vegetarian: {e.Vegetarian}</li>
                         <br></br>
-                    </>
+                    </ul>
                 ))}
             </ul>
             <Link to={"/frontpage"}>Go back to homepage</Link>
