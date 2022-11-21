@@ -2,7 +2,7 @@ import { createRoot } from "react-dom/client";
 import { act } from "@testing-library/react";
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
-import {ListVegetarianMenu} from "../../Menu/listVegetarianMenu";
+import {ListVegetarianMenu} from "../Menu/listVegetarianMenu";
 
 describe("ListVegetarianMenu tests", () => {
     const vegetarianMeal = [
@@ -20,7 +20,7 @@ describe("ListVegetarianMenu tests", () => {
         await act(async () => {
             createRoot(element).render(
                 <BrowserRouter>
-                    <ListVegetarianMenu listMenu={() => vegetarianMeal} />
+                    <ListVegetarianMenu listMenuOnlyVegetarian={() => vegetarianMeal} />
                 </BrowserRouter>
             );
         });
@@ -32,7 +32,7 @@ describe("ListVegetarianMenu tests", () => {
         await act(async () => {
             createRoot(element).render(
                 <BrowserRouter>
-                    <ListVegetarianMenu listMenu={() => vegetarianMeal} />
+                    <ListVegetarianMenu listMenuOnlyVegetarian={() => vegetarianMeal} />
                 </BrowserRouter>
             );
         });
@@ -46,5 +46,17 @@ describe("ListVegetarianMenu tests", () => {
             "Vegan: No",
             "Vegetarian: Yes",
         ]);
+    });
+
+    it("Check if listVegetarianMenu throws error", async () => {
+        const element = document.createElement("div");
+        await act(async () => {
+            createRoot(element).render(
+                <BrowserRouter>
+                    <ListVegetarianMenu listMenuOnlyVegetarian={() => {throw new Error("Something went wrong")}} />
+                </BrowserRouter>
+            );
+        });
+        expect(element.querySelector("#error-text").innerHTML).toEqual("Error: Something went wrong")
     });
 });

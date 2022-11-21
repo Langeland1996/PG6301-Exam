@@ -2,8 +2,8 @@ import {useLoading} from "../Middleware/useLoading";
 import {Link} from "react-router-dom";
 import React from "react";
 
-export function ListVeganMenu({listMenu}) {
-    const {loading, error, data} = useLoading(listMenu);
+export function ListVeganMenu({listMenuOnlyVegan}) {
+    const {loading, error, data} = useLoading(listMenuOnlyVegan);
 
     if (loading) {
         return <div>Loading...</div>;
@@ -13,7 +13,7 @@ export function ListVeganMenu({listMenu}) {
         return (
             <div>
                 <h1>Error</h1>
-                <div>{error.toString()}</div>
+                <div id="error-text">{error.toString()}</div>
             </div>
         );
     }

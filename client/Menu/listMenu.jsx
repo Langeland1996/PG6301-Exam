@@ -13,7 +13,7 @@ export function ListMenu({ listMenu }) {
     return (
       <div>
         <h1>Error</h1>
-        <div>{error.toString()}</div>
+        <div id="error-text">{error.toString()}</div>
       </div>
     );
   }
@@ -29,18 +29,16 @@ export function ListMenu({ listMenu }) {
         <Link to={"/menu/vegetarian"}>Display vegetarian meals</Link>
       </button>
       <ul>
-          <>
         {data.map((e) => (
-          <>
+            <>
             <li key={e.Dish}>Dish: {e.Dish}</li>
-            <li>Ingredients: {e.Ingredients}</li>
-            <li>Allergies: {e.Allergies}</li>
-            <li>Vegan: {e.Vegan}</li>
-            <li>Vegetarian: {e.Vegetarian}</li>
+            <li key={e.Dish}>Ingredients: {e.Ingredients}</li>
+            <li key={e.Dish}>Allergies: {e.Allergies}</li>
+            <li key={e.Dish}>Vegan: {e.Vegan}</li>
+            <li key={e.Dish}>Vegetarian: {e.Vegetarian}</li>
             <br></br>
-          </>
+            </>
         ))}
-          </>
       </ul>
       <Link to={"/frontpage"}>Go back to homepage</Link>
     </div>

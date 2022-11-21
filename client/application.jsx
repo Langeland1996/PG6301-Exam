@@ -28,11 +28,11 @@ export function Application() {
                 <Route path={"/menu"} element={<ListMenu listMenu={listMenu}/>}/>
                 <Route
                     path={"/menu/vegan"}
-                    element={<ListVeganMenu listMenu={listMenuOnlyVegan}/>}
+                    element={<ListVeganMenu listMenuOnlyVegan={listMenuOnlyVegan}/>}
                 />
                 <Route
                     path={"/menu/vegetarian"}
-                    element={<ListVegetarianMenu listMenu={listMenuOnlyVegetarian}/>}
+                    element={<ListVegetarianMenu listMenuOnlyVegetarian={listMenuOnlyVegetarian}/>}
                 />
                 <Route path={"/addNewMeal"} element={<addNewMeal/>}/>
             </Routes>

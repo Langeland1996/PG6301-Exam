@@ -1,7 +1,7 @@
 import { createRoot } from "react-dom/client";
 import { act } from "@testing-library/react";
 import React from "react";
-import { listMenu, ListMenu } from "../Menu/listMenu";
+import { ListMenu } from "../Menu/listMenu";
 import { BrowserRouter } from "react-router-dom";
 
 describe("ListMenu component", () => {
@@ -46,5 +46,23 @@ describe("ListMenu component", () => {
       "Vegan: No",
       "Vegetarian: Yes",
     ]);
+  });
+
+  it("Check if listMenu throws error", async () => {
+    const element = document.createElement("div");
+    await act(async () => {
+      createRoot(element).render(
+        <BrowserRouter>
+          <ListMenu
+            listMenu={() => {
+              throw new Error("Something went wrong");
+            }}
+          />
+        </BrowserRouter>
+      );
+    });
+    expect(element.querySelector("#error-text").innerHTML).toEqual(
+      "Error: Something went wrong"
+    );
   });
 });
