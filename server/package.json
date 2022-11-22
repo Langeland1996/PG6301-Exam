@@ -5,6 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "test": "jest --detectOpenHandles",
     "dev": "nodemon server.js",
     "build": "npm install",
     "start": "node server.js"
