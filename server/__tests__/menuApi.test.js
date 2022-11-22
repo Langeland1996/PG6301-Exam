@@ -13,9 +13,13 @@ beforeAll(async () => {
     dotenv.config();
     const mongoClient = new MongoClient(process.env.MONGODB_URL || "mongodb+srv://databaseuser:Drossap321@cluster0.ejknjfu.mongodb.net/test")
     await mongoClient.connect();
-    const database = mongoClient.db("pg6301");
-    await database.collection("cateringMenu")
+    const database = mongoClient.db("test_database");
+    await database.collection("cateringMenu").deleteMany({});
     app.use("/api/menu", MenuApi(database));
+});
+
+afterAll(() => {
+    mongoClient.close();
 });
 
 describe("menu api", () => {

@@ -4,12 +4,8 @@
 2. Write in terminal "npm run dev" to start up the client and server -> click on the port in the terminal to visit the pages.
 3. Write in terminal "npm run test" to run all tests in both client and server.
 
-// I had problems with getting github actions to work on the server, so i will not display test coverage.
-
-
-
-
-
+// I had problems with getting Github actions to work on the server, so it doesnt display test coverage.
+// I also had a hard time with the login, and didnt get it done
 
 PG6301 – Exam – November 2022
 
@@ -57,7 +53,7 @@ When you evaluate your application you can do as follows:
   questions or clarification on the exam). In case of ambiguities in these instructions, do your
   best effort to address them (and possibly explain your decisions in the readme file).
 * Structure and formatting:
-* [ ] Your project should have a README.md file, that contains information about how to
+* [x] Your project should have a README.md file, that contains information about how to
   start/run the code, what tasks have been accomplished, and discusses what assumptions were
   made.
 * Your code should clearly separate the server from client
@@ -66,7 +62,7 @@ When you evaluate your application you can do as follows:
   MongoDB with other databases, or go for other backend solutions than Express.
   Submission contents:
 * [ ] PDF file – a pdf version of the README.md file described above
-* [ ] .zip archive – you can obtain this from the github repo. You can (and it is recommended
+* [x] .zip archive – you can obtain this from the github repo. You can (and it is recommended
   that you do) use the repo associated with the github classroom:
   https://classroom.github.com/a/qa5zyqOy
   Otherwise, you should also provide a link to the github repository you have used, where
