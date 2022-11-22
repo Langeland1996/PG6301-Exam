@@ -6,6 +6,7 @@
 
 // I had problems with getting Github actions to work on the server, so it doesnt display test coverage.
 // I also had a hard time with the login, and didnt get it done
+// Below are example data for the database to insert, it should already be inside the database 
 
 PG6301 – Exam – November 2022
 
@@ -206,4 +207,47 @@ while successfully logged in).
   Make sure to clearly state in the Readme.md file which requirements you have completed,
   and which (if any) extra features you have added.
   Lykke til and Happy Programming!
+
+## Data that is already in the DB:
+Dish: French Toast
+Ingredients: Bread, Milk, Egg, Cinnamon
+Allergies: Gluten, Egg, Lactose
+Vegan: No
+Vegetarian: Yes
+
+Dish: Vegetarian Omelette
+Ingredients: Eggs, milk, butter, fresh or frozen veggies
+Allergies: Egg, Lactose
+Vegan: No
+Vegetarian: Yes
+
+Dish: Eggs in Hell (Shakshuka)
+Ingredients: Tomato Sauce, Eggs, Spice, ground meat, Oil
+Allergies: Eggs
+Vegan: No
+Vegetarian: No
+
+Dish: Pasta Primavera
+Ingredients: Pasta, Frozen Veggies, Salt, Cheese
+Allergies: Eggs, Lactose
+Vegan: No
+Vegetarian: Yes
+
+Dish: Rice and Beans
+Ingredients: Rice, Beans, Garlic, Onions, Veggie Stock, Oil, Seasoning
+Allergies: None
+Vegan: Yes
+Vegetarian: Yes
+
+Dish: Noodle Soup
+Ingredients: Veggie Broth, Frozen Veggies, Pasta
+Allergies: Eggs
+Vegan: No
+Vegetarian: Yes
+
+Dish: Risotto
+Ingredients: Rice, Broth, Butter, Cheese, Veggies
+Allergies: Lactose
+Vegan: No
+Vegetarian: Yes
 
