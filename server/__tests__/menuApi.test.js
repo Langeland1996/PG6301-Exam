@@ -5,15 +5,13 @@ import { MenuApi } from "../menuApi.js";
 import dotenv from "dotenv";
 import bodyParser from "body-parser";
 
-dotenv.config();
-
 const app = express();
 app.use(bodyParser.json());
-
-
-const mongoClient = new MongoClient(process.env.MONGODB_URL || "mongodb+srv://databaseuser:Drossap321@cluster0.ejknjfu.mongodb.net/test)")
+let mongoClient;
 
 beforeAll(async () => {
+    dotenv.config();
+    const mongoClient = new MongoClient(process.env.MONGODB_URL || "mongodb+srv://databaseuser:Drossap321@cluster0.ejknjfu.mongodb.net/test)")
     await mongoClient.connect();
     const database = mongoClient.db("test_database");
     await database.collection("cateringMenu").deleteMany({});
