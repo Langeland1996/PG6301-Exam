@@ -13,17 +13,18 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16.x
+          cache: yarn
       - name: install dependencies
         run: npm ci
       - run: npm test
         env:
           MONGODB_URL: ${{ secrets.MONGODB_URL }}
       - name: Collect coverage for client
-        uses: ArtiomTr/jest-coverage-report-action@v2
+        uses: ArtiomTr/jest-coverage-report-action@v3
         with:
           working-directory: client
       - name: Collect coverage for server
-        uses: ArtiomTr/jest-coverage-report-action@v2
+        uses: ArtiomTr/jest-coverage-report-action@v3
         with:
           working-directory: server
         env:
