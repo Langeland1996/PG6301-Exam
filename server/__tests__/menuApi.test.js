@@ -19,6 +19,10 @@ beforeAll(async () => {
     app.use("/api/menu", MenuApi(database));
 });
 
+afterAll(() => {
+    mongoClient.close();
+});
+
 describe("menu api", () => {
 
     it("adds a new meal", async () => {

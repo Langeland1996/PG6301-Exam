@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import {Link} from "react-router-dom";
 
 function FormInput({ label, value, onChangeValue }) {
     return (
@@ -33,6 +34,9 @@ export function AddNewMeal({ createMeal }) {
             <FormInput label={"Vegan"} value={vegan} onChangeValue={setVegan} />
             <FormInput label={"Vegetarian"} value={vegetarian} onChangeValue={setVegetarian} />
             <button>Submit</button>
+            &nbsp;&nbsp;
+            &nbsp;&nbsp;
+            <Link to={"/frontpage"}>Go back to homepage</Link>
         </form>
     );
 }
