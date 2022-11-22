@@ -7,20 +7,19 @@ import bodyParser from "body-parser";
 
 const app = express();
 app.use(bodyParser.json());
-let mongoClient;
 
-beforeAll(async () => {
+
+
     dotenv.config();
-    const mongoClient = new MongoClient(process.env.MONGODB_URL || "mongodb+srv://databaseuser:Drossap321@cluster0.ejknjfu.mongodb.net/test)")
+    const mongoClient = new MongoClient("mongodb+srv://databaseuser:Drossap321@cluster0.ejknjfu.mongodb.net/test)")
     await mongoClient.connect();
     const database = mongoClient.db("test_database");
     await database.collection("cateringMenu").deleteMany({});
     app.use("/api/menu", MenuApi(database));
-});
 
-afterAll(() => {
-    mongoClient.close();
-});
+
+
+
 
 describe("menu api", () => {
 
@@ -52,4 +51,6 @@ describe("menu api", () => {
         const listResponse = await request(app).get("/api/menu").expect(200);
         expect(listResponse.body.map(({ Dish }) => Dish )).toContain(Dish);
     })
+
+    mongoClient.close();
 });
