@@ -15,7 +15,8 @@ const mongoClient = new MongoClient(process.env.MONGODB_URL);
 
 beforeAll(async () => {
     await mongoClient.connect();
-    const database = mongoClient.db("pg6301");
+    const database = mongoClient.db("test_database");
+    await database.collection("cateringMenu").deleteMany({});
     app.use("/api/menu", MenuApi(database));
 });
 
@@ -48,7 +49,7 @@ describe("menu api", () => {
     });
 
     it("Check if database contains a dish", async () => {
-        const Dish = "Vegetarian Omelette";
+        const Dish = "Risotto";
 
         const listResponse = await request(app).get("/api/menu").expect(200);
         expect(listResponse.body.map(({ Dish }) => Dish )).toContain(Dish);
