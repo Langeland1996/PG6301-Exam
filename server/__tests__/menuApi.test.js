@@ -11,7 +11,7 @@ const app = express();
 app.use(bodyParser.json());
 
 
-const mongoClient = new MongoClient(process.env.MONGODB_URL);
+const mongoClient = new MongoClient(process.env.MONGODB_URL || "mongodb+srv://databaseuser:Drossap321@cluster0.ejknjfu.mongodb.net/test)")
 
 beforeAll(async () => {
     await mongoClient.connect();
