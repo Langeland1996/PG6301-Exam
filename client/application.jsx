@@ -1,12 +1,13 @@
 import {fetchJSON} from "./Middleware/fetchJSON";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import {FrontPage} from "./frontPage";
+import {FrontPage} from "./frontpage.jsx";
 import {ListMenu} from "./Menu/listMenu";
 import {ListVeganMenu} from "./Menu/listVeganMenu";
 import {ListVegetarianMenu} from "./Menu/listVegetarianMenu";
 import React from "react";
 import {Login} from "./login";
 import {AddNewMeal} from "./addNewMeal";
+import {MainPage} from "./mainPage";
 
 export function Application() {
     async function listMenu() {
@@ -49,8 +50,9 @@ export function Application() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path={"/"} element={<Login/>}/>
-                <Route path={"/frontpage"} element={<FrontPage/>}/>
+                <Route path={"/"} element={<FrontPage/>}/>
+                <Route path={"/login"} element={<Login/>}/>
+                <Route path={"/mainPage"} element={<MainPage/>}/>
                 <Route path={"/menu"} element={<ListMenu listMenu={listMenu}/>}/>
                 <Route
                     path={"/menu/vegan"}

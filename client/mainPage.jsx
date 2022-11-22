@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom";
 import React from "react";
 
-export function FrontPage() {
+export function MainPage() {
     return (
         <div>
             <h1>Welcome to food catering</h1>
