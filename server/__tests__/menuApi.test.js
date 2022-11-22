@@ -2,7 +2,7 @@ import request from "supertest";
 import express from "express";
 import { MongoClient } from "mongodb";
 import { MenuApi } from "../menuApi.js";
-import dotenv from "../dotenv";
+import dotenv from "dotenv";
 import bodyParser from "body-parser";
 
 dotenv.config();
