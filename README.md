@@ -1,3 +1,16 @@
+## How to start in program:
+
+1. Write in terminal "npm run build" to do npm install on all package.json
+2. Write in terminal "npm run dev" to start up the client and server -> click on the port in the terminal to visit the pages.
+3. Write in terminal "npm run test" to run all tests in both client and server.
+
+// I had problems with getting github actions to work on the server, so i will not display test coverage.
+
+
+
+
+
+
 PG6301 – Exam – November 2022
 
 ## Exam concept
@@ -198,4 +211,3 @@ while successfully logged in).
   and which (if any) extra features you have added.
   Lykke til and Happy Programming!
 
-commit for test
