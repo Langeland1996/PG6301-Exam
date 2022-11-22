@@ -26,15 +26,15 @@ When you evaluate your application you can do as follows:
 ##   Checklist of technologies you should include in your application
 
 * [ ] Some form of Login and access control
-* [ ] Jest tests
-* [ ] Snapshot tests
+* [x] Jest tests
+* [x] Snapshot tests
 * [ ] Simulate + jest.fn
-* [ ] Supertest
-* [ ] Github Actions with coverage report
+* [x] Supertest
+* [x] Github Actions with coverage report
 * [ ] Deployment to cloud (in this case, Azure)
-* [ ] Mongodb
-* [ ] Navigating in the application using React Router (remember Express Middleware)
-* [ ] Reading data from the server (remember error handling)
+* [x] Mongodb
+* [x] Navigating in the application using React Router (remember Express Middleware)
+* [x] Reading data from the server (remember error handling)
 * [ ] Writing data to the server
 * [ ] Websockets
 

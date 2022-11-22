@@ -25,11 +25,10 @@ export function MenuApi(mongoDatabase) {
   });
 
 
-  router.post("/new", (req, res) => {
-    mongoDatabase.collection("movies").insert({
-      title: "one"
-    });
-    res.sendStatus(500);
+  router.post("/", (req, res) => {
+    const { Dish, Ingredients, Allergies, Vegan, Vegetarian } = req.body;
+    const result = mongoDatabase.collection("cateringMenu").insertOne({ Dish, Ingredients, Allergies, Vegan, Vegetarian });
+    res.sendStatus(200);
   });
 
   return router;
