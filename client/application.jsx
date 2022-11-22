@@ -6,7 +6,6 @@ import {ListVeganMenu} from "./Menu/listVeganMenu";
 import {ListVegetarianMenu} from "./Menu/listVegetarianMenu";
 import React from "react";
 import {Login} from "./login";
-import {AddNewMeal} from "./addNewMeal";
 
 export function Application() {
     async function listMenu() {
@@ -60,7 +59,7 @@ export function Application() {
                     path={"/menu/vegetarian"}
                     element={<ListVegetarianMenu listMenuOnlyVegetarian={listMenuOnlyVegetarian}/>}
                 />
-                <Route path={"/addNewMeal"} element={<AddNewMeal createMeal={createMeal}/>}/>
+                <Route path={"/addNewMeal"} element={<addNewMeal/>}/>
             </Routes>
         </BrowserRouter>
     );
