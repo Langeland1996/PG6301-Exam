@@ -36,7 +36,7 @@ export function AddNewMeal({ createMeal }) {
             <button>Submit</button>
             &nbsp;&nbsp;
             &nbsp;&nbsp;
-            <Link to={"/frontpage"}>Go back to homepage</Link>
+            <Link to={"/mainPage"}>Go back to homepage</Link>
         </form>
     );
 }

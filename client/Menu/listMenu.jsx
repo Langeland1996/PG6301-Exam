@@ -40,10 +40,8 @@ export function ListMenu({ listMenu }) {
             </ul>
         ))}
       </ul>
-      <Link to={"/frontpage"}>Go back to homepage</Link>
+      <Link to={"/mainPage"}>Go back to homepage</Link>
     </div>
   );
 }
 
-export class listMenu {
-}

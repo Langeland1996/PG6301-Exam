@@ -40,7 +40,7 @@ export function ListVeganMenu({ listMenuOnlyVegan }) {
           </ul>
         ))}
       </ul>
-      <Link to={"/frontpage"}>Go back to homepage</Link>
+      <Link to={"/mainPage"}>Go back to homepage</Link>
     </div>
   );
 }
