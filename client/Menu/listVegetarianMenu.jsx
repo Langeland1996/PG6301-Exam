@@ -22,7 +22,7 @@ export function ListVegetarianMenu({listMenuOnlyVegetarian}) {
         <div>
             <h1>Vegetarian meals to order.</h1>
             <button>
-                <Link to={"/menu"}>Display </Link>
+                <Link to={"/menu"}>Display all meals </Link>
             </button>
             &nbsp;&nbsp;
             <button>

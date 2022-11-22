@@ -6,6 +6,7 @@ import {ListVeganMenu} from "./Menu/listVeganMenu";
 import {ListVegetarianMenu} from "./Menu/listVegetarianMenu";
 import React from "react";
 import {Login} from "./login";
+import {AddNewMeal} from "./addNewMeal";
 
 export function Application() {
     async function listMenu() {
@@ -18,6 +19,31 @@ export function Application() {
 
     async function listMenuOnlyVegetarian() {
         return await fetchJSON("/api/menu/vegetarian");
+    }
+
+    function createMeal({dish, ingredients, allergies, vegan, vegetarian }){
+        if (dish === "" || ingredients === "" || allergies === "" || vegan === "" || vegetarian === "") {
+            return <div>Input invalid</div>
+        }
+
+
+        const jsonData = {
+            Dish: dish,
+            Ingredients: ingredients,
+            Allergies: allergies,
+            Vegan: vegan,
+            Vegetarian: vegetarian
+        }
+
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(jsonData)
+        };
+
+        fetch("/api/menu" , requestOptions)
+            .then(response => response.json())
+            .then(data => this.setState({ postId: data.id }));
     }
 
     return (
@@ -34,7 +60,7 @@ export function Application() {
                     path={"/menu/vegetarian"}
                     element={<ListVegetarianMenu listMenuOnlyVegetarian={listMenuOnlyVegetarian}/>}
                 />
-                <Route path={"/addNewMeal"} element={<addNewMeal/>}/>
+                <Route path={"/addNewMeal"} element={<AddNewMeal createMeal={createMeal}/>}/>
             </Routes>
         </BrowserRouter>
     );
