@@ -1,5 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Frontpage component check if snapshot is matching "Frontpage" 1`] = `"<div><h1>Login</h1><ul><li><a href="/Login">Click to login</a></li><li><a href="/mainPage">Go to website</a></li></ul></div>"`;
-
-exports[`ListMenu component check if snapshot is matching "Login" 1`] = `"<div><h1>Login</h1><ul><li><a href="/Login">Click to login</a></li><li><a href="/mainPage">Go to website</a></li></ul></div>"`;

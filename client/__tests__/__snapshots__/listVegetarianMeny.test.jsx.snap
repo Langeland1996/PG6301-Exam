@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`ListVegetarianMenu tests Check ListVegetarianMenu Snapshot 1`] = `"<div><h1>Vegetarian meals to order.</h1><button><a href="/menu">Display all meals </a></button>&nbsp;&nbsp;<button><a href="/menu/vegan">Display vegan meals</a></button><ul><ul><li>Dish: French Toast</li><li>Ingredients: Eggs, Bread, Milk, Cinnamon, Syrup</li><li>Allergies: Eggs, Gluten, Lactoce</li><li>Vegan: No</li><li>Vegetarian: Yes</li><br></ul></ul><a href="/mainPage">Go back to homepage</a></div>"`;
