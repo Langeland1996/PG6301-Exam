@@ -1,4 +1,4 @@
-import {fetchJSON} from "./Middleware/fetchJSON";
+import {FetchJSON} from "./Middleware/fetchJSON";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {FrontPage} from "./frontpage.jsx";
 import {ListMenu} from "./Menu/listMenu";
@@ -11,15 +11,15 @@ import {MainPage} from "./mainPage";
 
 export function Application() {
     async function listMenu() {
-        return await fetchJSON("/api/menu");
+        return await FetchJSON("/api/menu");
     }
 
     async function listMenuOnlyVegan() {
-        return await fetchJSON("/api/menu/vegan");
+        return await FetchJSON("/api/menu/vegan");
     }
 
     async function listMenuOnlyVegetarian() {
-        return await fetchJSON("/api/menu/vegetarian");
+        return await FetchJSON("/api/menu/vegetarian");
     }
 
     function createMeal({dish, ingredients, allergies, vegan, vegetarian }){
