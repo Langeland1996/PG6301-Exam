@@ -2,7 +2,6 @@ on:
   push:
     branches:
       - main
-      - master
 
 jobs:
   verify:
@@ -10,10 +9,20 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
       - name: install dependencies
         run: npm ci
       - run: npm test
-      - name: Collect coverage from client
+        env:
+          MONGODB_URL: ${{ secrets.MONGODB_URL }}
+      - name: Collect coverage for client
         uses: ArtiomTr/jest-coverage-report-action@v2
         with:
           working-directory: client
+      - name: Collect coverage for server
+        uses: ArtiomTr/jest-coverage-report-action@v2
+        with:
+          working-directory: server
+        env:
+          MONGODB_URL: ${{ secrets.MONGODB_URL }}
